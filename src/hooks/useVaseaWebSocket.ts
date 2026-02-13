@@ -1,3 +1,4 @@
+export type Message = { type: string; content?: string; [key: string]: any };
 import { useEffect, useState } from 'react';
 import { connectWebSocket, onMessage, send } from '@/lib/websocket';
 
