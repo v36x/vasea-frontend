@@ -1,5 +1,6 @@
 import { useVasea } from '@/hooks/useVaseaWebSocket';
-import { Send, Plus } from 'lucide-react';
+// Change this line:
+import { Send, Plus } from 'lucide-react'   →   import { Send } from 'lucide-react'
 
 function App() {
   const { prompt, setPrompt, startProject, logs, prd, respondToPRD, files, review } = useVasea();
