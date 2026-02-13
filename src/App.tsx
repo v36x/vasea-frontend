@@ -1,6 +1,5 @@
 import { useVasea } from '@/hooks/useVaseaWebSocket';
-// Change this line:
-import { Send } from 'lucide-react'
+import { Send } from 'lucide-react';
 
 function App() {
   const { prompt, setPrompt, startProject, logs, prd, respondToPRD, files, review } = useVasea();
@@ -9,15 +8,15 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-gray-950 to-black text-white p-6 md:p-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-10 text-emerald-400">
-          VASEA – AI Full Project Generator
+          VASEA - AI Full Project Generator
         </h1>
 
         <div className="flex flex-col gap-6">
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="என்ன project உருவாக்கணும்? (English/Tamil OK)"
-            className="w-full h-32 p-5 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+            placeholder="What project do you want? Describe in detail..."
+            className="w-full h-32 p-5 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none text-white"
           />
 
           <button
@@ -38,12 +37,12 @@ function App() {
           {prd && (
             <div className="bg-gray-900 p-5 rounded-xl border border-gray-700">
               <h2 className="text-xl font-semibold mb-3">PRD</h2>
-              <pre className="whitespace-pre-wrap text-sm">{prd}</pre>
-              <div className="mt-4 flex gap-4">
-                <button onClick={() => respondToPRD('accept')} className="px-5 py-2 bg-green-600 rounded hover:bg-green-700">
+              <pre className="whitespace-pre-wrap text-sm mb-6">{prd}</pre>
+              <div className="flex gap-4">
+                <button onClick={() => respondToPRD('accept')} className="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg">
                   Accept
                 </button>
-                <button onClick={() => respondToPRD('reject', 'மேலும் விவரங்கள் சேர்க்கவும்')} className="px-5 py-2 bg-red-600 rounded hover:bg-red-700">
+                <button onClick={() => respondToPRD('reject', 'More details and acceptance criteria needed')} className="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg">
                   Reject
                 </button>
               </div>
