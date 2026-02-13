@@ -1,6 +1,6 @@
 interface CodeBlockProps {
   content: string
-  language?: string
+  // language?: string
 }
 
 export function CodeBlock({ content, language = 'text' }: CodeBlockProps) {
