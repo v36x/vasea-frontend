@@ -1,8 +1,8 @@
-export type Message = { type: string; content?: string; [key: string]: any };
 import { useEffect, useState } from 'react';
 import { connectWebSocket, onMessage, send } from '@/lib/websocket';
 
-type Message = { type: string; content?: string; [key: string]: any };
+// Define & export Message type once, at the top or bottom
+export type Message = { type: string; content?: string; [key: string]: any };
 
 export function useVasea() {
   const [logs, setLogs] = useState<Message[]>([]);
